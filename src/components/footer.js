@@ -4,13 +4,13 @@ import github from '../images/github.svg'
 import linkedin from '../images/linkedin.svg'
 import twitter from '../images/twitter.svg'
 import facebook from '../images/facebook.svg'
-import * as styles from '../styles/common.module.scss'
+import * as style from '../styles/common.module.scss'
 
 const Footer = () => {
 
     return (
-        <footer className={styles.footerWrapper}>
-            <div className={styles.insideContainer}>
+        <footer className={style.footerWrapper}>
+            <div className={style.insideContainer}>
                 <a href='https://wwww.google.com'><img src={github} alt='logo' /></a>
                 <a href='https://wwww.google.com'><img src={linkedin} alt='logo' /></a>
                 <a href='https://wwww.google.com'><img src={twitter} alt='logo' /></a>
