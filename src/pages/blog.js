@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import * as style from '../styles/blog.module.scss'
 
 const Blog = (props) => {
-console.log(props);
+
   return (
     <Layout>
       <div className={style.wrapper}>
