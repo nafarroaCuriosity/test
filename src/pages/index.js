@@ -1,16 +1,18 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import JSLogo from "../images/javascript.svg"
 import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
 import NextLogo from "../images/next.svg"
-import Layout from "../components/layout"
 import * as style from "../styles/index.module.scss"
 
 const Index = (props) => {
   return (
     <Layout>
+      <SEO title="Jack of allTrades" description="Jack of Tradesの公式サイトです" />
       <div className={style.hero}>
         <StaticImage
           src="../images/index-hero.jpg"

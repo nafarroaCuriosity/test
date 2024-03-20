@@ -1,20 +1,25 @@
+import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import * as style from '../styles/singleBlog.module.scss'
 
 const SingleBlog = (props) => {
 
   return (
     <Layout>
+      <SEO
+        title={props.data.contentfulBlog.title}
+        description={props.data.contentfulBlog.excerpt}
+      />
       <div className={style.hero}>
         <GatsbyImage
           image={props.data.contentfulBlog.image.gatsbyImageData}
           alt="blog-image"
         />
       </div>
-      <div className={style.wrapper}> 
+      <div className={style.wrapper}>
         <div className={style.cotainer}>
           <h1>{props.data.contentfulBlog.title}</h1>
           <p>{props.data.contentfulBlog.date}</p>
@@ -31,6 +36,7 @@ export const query = graphql`
   query ContentfulSingleBlogQuery($slug: String!) {
     contentfulBlog(slug: { eq: $slug}) {
       title
+      excerpt
       date(formatString: "YYYY-MM-DD")
       image {
         gatsbyImageData(formats: AUTO, placeholder: BLURRED, quality: 90, width: 1000)
