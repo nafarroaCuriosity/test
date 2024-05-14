@@ -2,29 +2,33 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import * as style from "../styles/common.module.scss"
+import { Container, List, ListItem } from "@mui/material"
 
 const Header = () => {
   return (
-    <header className={style.headerWrapper}>
-      <div className={style.container}>
-        <div className={style.flexContainer}>
+    <Container 
+    maxWidth={'lg'}  
+    sx={{
+      display:'flex', 
+      justifyContent:'center', 
+      textAlign:'center',
+      flexGrow: 1,
+      }}>
           <Link to="/">
             <StaticImage
-              src="../images/logo.png"
+              src="../images/NafarroaLogo.svg"
               alt="logo"
               quality={90}
               placeholder="blurred"
               formats={["auto", "avif", "webp"]}
-              width={50}
+              width={180}
             />
           </Link>
-          <ul>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+          <List sx={{display:'flex', justifyContent:'center', alignItems: 'center', textAlign:'center'}}>
+            <ListItem><Link to="/blog">Blog</Link></ListItem>
+            {/* <li><Link to="/contact">Contact</Link></li> */}
+          </List>
+    </Container>
   )
 }
 

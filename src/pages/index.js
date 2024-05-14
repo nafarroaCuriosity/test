@@ -8,25 +8,23 @@ import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
 import NextLogo from "../images/next.svg"
 import * as style from "../styles/index.module.scss"
+import { Grid, Paper } from "@mui/material"
 
 const Index = (props) => {
   return (
     <Layout>
       <SEO title="Jack of allTrades" description="Jack of Tradesの公式サイトです" />
-      <div className={style.hero}>
+      <Grid container>
         <StaticImage
-          src="../images/index-hero.jpg"
-          alt="hero"
+          src="../images/NafarroaCuriosity.png"
+          alt="banner"
           quality={90}
           placeholder="blurred"
           formats={["auto", "webp", "avif"]}
           className={style.heroImg}
         />
-        <div className={style.textContainer}>
-          <h1>Jack of AllTrades</h1>
-          <h3>World's Largest Provider</h3>
-        </div>
-      </div>
+      </Grid>
+
       <div className={style.container}>
         <div className={style.company}>
           <div>
@@ -49,7 +47,7 @@ const Index = (props) => {
             formats={["auto", "avif", "webp"]}
           />
         </div>
-        <div className={style.service}> 
+        <div className={style.service}>
           <h2>Service</h2>
           <div className={style.serviceContainer}>
             <div><img src={JSLogo} alt="javascript" /><span>JavaScript / 10years</span></div>
