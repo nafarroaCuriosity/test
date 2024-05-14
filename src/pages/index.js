@@ -14,7 +14,7 @@ const Index = (props) => {
   return (
     <Layout>
       <SEO title="Jack of allTrades" description="Jack of Tradesの公式サイトです" />
-      <Grid container>
+      <Grid container maxWidth={"lg"} sx={{mx:'auto', mt:4}}>
         <StaticImage
           src="../images/NafarroaCuriosity.png"
           alt="banner"

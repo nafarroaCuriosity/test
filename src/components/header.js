@@ -10,7 +10,7 @@ const Header = () => {
     maxWidth={'lg'}  
     sx={{
       display:'flex', 
-      justifyContent:'center', 
+      justifyContent:'flex-start', 
       textAlign:'center',
       flexGrow: 1,
       }}>
