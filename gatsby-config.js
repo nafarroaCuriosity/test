@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    defaultTitle: `Jack of All Trades Official Site`,
+    defaultTitle: `Nafarroa Curiosity`,
     defaultDescription: `モダン開発を得意とするJack of All Tradesの公式サイトです。`,
     defaultImage: "src/images/social-card.png",
     siteUrl: `https://nafarroacuriosity.netlify.app/`,

@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
@@ -8,45 +9,49 @@ import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
 import NextLogo from "../images/next.svg"
 import * as style from "../styles/index.module.scss"
-import { Grid, Paper } from "@mui/material"
+import { CssBaseline, Grid, Paper, ThemeProvider, Typography } from "@mui/material"
+import theme from "../styles/theme"
 
 const Index = (props) => {
-  return (
-    <Layout>
-      <SEO title="Jack of allTrades" description="Jack of Tradesの公式サイトです" />
-      <Grid container maxWidth={"lg"} sx={{mx:'auto', mt:4}}>
-        <StaticImage
-          src="../images/NafarroaCuriosity.png"
-          alt="banner"
-          quality={90}
-          placeholder="blurred"
-          formats={["auto", "webp", "avif"]}
-          className={style.heroImg}
-        />
-      </Grid>
+  useEffect(() => {
+    document.title = 'Nafarroa Curiosity'
+  }, [])
 
-      <div className={style.container}>
-        <div className={style.company}>
-          <div>
-            <h2>弊社について</h2>
-            <p>Last Update: {props.data.contentfulLastupdate.lastupdate}</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              It has survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged.
-              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-              and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-          </div>
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <SEO title="Jack of allTrades" description="Jack of Tradesの公式サイトです" />
+        <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 20 }}>
           <StaticImage
-            src="../images/company.jpg"
-            alt="profiel"
+            src="../images/NafarroaCuriosity.png"
+            alt="banner"
             quality={90}
             placeholder="blurred"
-            formats={["auto", "avif", "webp"]}
+            formats={["auto", "webp", "avif"]}
+            className={style.heroImg}
           />
-        </div>
+        </Grid>
+
+        <Grid container >
+          <Grid item xs={12} md={4}>
+            <StaticImage
+              src="../images/profiel-icon.svg"
+              alt="profiel"
+              quality={90}
+              placeholder="blurred"
+              formats={["auto", "avif", "webp"]}
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h4">Curiosityの紹介</Typography>
+            <Typography variant='body1'>
+              映像・音響機器をコンピュータ使って制御を行う、システム開発を行ったり、
+
+            </Typography>
+          </Grid>
+        </Grid>
+
         <div className={style.service}>
           <h2>Service</h2>
           <div className={style.serviceContainer}>
@@ -59,8 +64,9 @@ const Index = (props) => {
         <div className={style.ctaButton}>
           <Link to="/contact">Contact Us!</Link>
         </div>
-      </div>
-    </Layout>
+
+      </Layout>
+    </ThemeProvider >
   )
 }
 
