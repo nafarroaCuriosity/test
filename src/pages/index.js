@@ -8,8 +8,7 @@ import JSLogo from "../images/javascript.svg"
 import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
 import NextLogo from "../images/next.svg"
-import * as style from "../styles/index.module.scss"
-import { CssBaseline, Grid, Paper, ThemeProvider, Typography } from "@mui/material"
+import { Box, Card, CardMedia, CssBaseline, Grid, Paper, ThemeProvider, Typography } from "@mui/material"
 import theme from "../styles/theme"
 
 const Index = (props) => {
@@ -29,41 +28,37 @@ const Index = (props) => {
             quality={90}
             placeholder="blurred"
             formats={["auto", "webp", "avif"]}
-            className={style.heroImg}
           />
         </Grid>
 
-        <Grid container >
-          <Grid item xs={12} md={4}>
-            <StaticImage
-              src="../images/profiel-icon.svg"
-              alt="profiel"
-              quality={90}
-              placeholder="blurred"
-              formats={["auto", "avif", "webp"]}
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h4">Curiosityの紹介</Typography>
-            <Typography variant='body1'>
-              映像・音響機器をコンピュータ使って制御を行う、システム開発を行ったり、
+        <Grid container
+          sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}
+        >
 
-            </Typography>
-          </Grid>
+          <Card elevation='none'
+          // sx={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <Box sx={{ml:18}}>
+              <StaticImage
+                width={124}
+                src="../images/profiel-icon.png"
+                alt="profiel"
+                quality={90}
+                placeholder="blurred"
+                formats={["auto", "avif", "webp"]}
+              />
+            </Box>
+            <Box sx={{ mt: 4 }}>
+              <Typography variant="h4">Curiosityの紹介</Typography>
+            </Box>
+            <Box>
+              <Typography variant='h6'>
+                映像・音響機器をコンピュータ使って制御を行う、システム開発を行ったり、
+              </Typography>
+            </Box>
+          </Card>
         </Grid>
 
-        <div className={style.service}>
-          <h2>Service</h2>
-          <div className={style.serviceContainer}>
-            <div><img src={JSLogo} alt="javascript" /><span>JavaScript / 10years</span></div>
-            <div><img src={ReactLogo} alt="react" /><span>React / 5years</span></div>
-            <div><img src={GatsbyLogo} alt="gatasby" /><span>Gatsby / 3years</span></div>
-            <div><img src={NextLogo} alt="next" /><span>Next.js / 3years</span></div>
-          </div>
-        </div>
-        <div className={style.ctaButton}>
-          <Link to="/contact">Contact Us!</Link>
-        </div>
 
       </Layout>
     </ThemeProvider >

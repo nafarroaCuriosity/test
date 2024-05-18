@@ -2,7 +2,8 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import * as style from "../styles/common.module.scss"
-import { AppBar, Container, List, ListItem, ListItemText } from "@mui/material"
+import { AppBar, Button, Container, List, ListItem, ListItemText } from "@mui/material"
+import { Colors } from "../styles/theme"
 
 const Header = () => {
   return (
@@ -26,9 +27,26 @@ const Header = () => {
           />
         </Link>
         <List sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-          <ListItemText primary='HOME'><Link to="/" /></ListItemText>
-          <ListItemText primary="Blog"><Link to="/blog" /></ListItemText>
-          {/* <li><Link to="/contact">Contact</Link></li> */}
+          <ListItem components={Button}>
+            <Link to="/">
+              <ListItemText
+                primary='HOME'
+                primaryTypographyProps={{
+                  fontSize: '2rem'
+                }}
+              />
+            </Link>
+          </ListItem>
+          <ListItem components={Button}>
+            <Link to="/blog">
+              <ListItemText
+                primary='blog'
+                primaryTypographyProps={{
+                  fontSize: '2rem'
+                }}
+              />
+            </Link>
+          </ListItem>
         </List>
       </Container>
     </AppBar>
