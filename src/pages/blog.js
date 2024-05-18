@@ -9,7 +9,7 @@ const Blog = (props) => {
 
   return (
     <Layout>
-      <SEO  title="ブログ" description="これはブログページです" />
+      <SEO  title="Nafarroa Curiosity Blog" description="Nafarroa Curiosityのブログページです" />
       <div className={style.wrapper}>
         <div className={style.container}>
           <h1>Blog</h1>
