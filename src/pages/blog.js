@@ -1,15 +1,26 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as style from '../styles/blog.module.scss'
+import { Grid } from "@mui/material"
 
 const Blog = (props) => {
 
   return (
     <Layout>
       <SEO  title="Nafarroa Curiosity Blog" description="Nafarroa Curiosityのブログページです" />
+
+      <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 20 }}>
+          <StaticImage
+            src="../images/Blog Banner.svg"
+            alt="banner"
+            quality={90}
+            placeholder="blurred"
+            formats={["auto", "webp", "avif"]}
+          />
+        </Grid>
       <div className={style.wrapper}>
         <div className={style.container}>
           <h1>Blog</h1>

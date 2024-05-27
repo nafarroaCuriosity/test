@@ -1,9 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import * as style from "../styles/common.module.scss"
 import { AppBar, Button, Container, List, ListItem, ListItemText } from "@mui/material"
-import { Colors } from "../styles/theme"
 
 const Header = () => {
   return (
