@@ -1,19 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { AppBar, Button, Container, List, ListItem, ListItemText } from "@mui/material"
+import { ListItemIcon, ListItemText } from "@mui/material"
+import HomeIcon from '@mui/icons-material/Home';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import { AppbarContainer, AppbarHeader, Mylist } from "../styles/Appbar";
 
 const Header = () => {
   return (
-    <AppBar position="fixed" color="inherit" elevation={'none'}>
-      <Container
-        maxWidth={'lg'}
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-          textAlign: 'center',
-          flexGrow: 1,
-        }}>
+    <AppbarContainer>
+      <AppbarHeader>
         <Link to="/">
           <StaticImage
             src="../images/NafarroaLogo.svg"
@@ -24,30 +20,23 @@ const Header = () => {
             width={180}
           />
         </Link>
-        <List sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-          <ListItem components={Button}>
-            <Link to="/">
-              <ListItemText
-                primary='HOME'
-                primaryTypographyProps={{
-                  fontSize: '2rem'
-                }}
-              />
-            </Link>
-          </ListItem>
-          <ListItem components={Button}>
-            <Link to="/blog">
-              <ListItemText
-                primary='blog'
-                primaryTypographyProps={{
-                  fontSize: '2rem'
-                }}
-              />
-            </Link>
-          </ListItem>
-        </List>
-      </Container>
-    </AppBar>
+      </AppbarHeader>
+      <Mylist>
+        <Link to="/">
+          <ListItemIcon sx={{ px: 4, alignItems: 'center' }}>
+            <HomeIcon />
+            <ListItemText sx={{ pl: 2 }} primary='HOME' />
+          </ListItemIcon>
+        </Link>
+
+        <Link to="/blog">
+          <ListItemIcon sx={{ px: 4, alignItems: 'center' }}>
+            <BorderColorIcon />
+            <ListItemText sx={{ pl: 2 }} primary='blog' />
+          </ListItemIcon>
+        </Link>
+      </Mylist>
+    </AppbarContainer>
   )
 }
 

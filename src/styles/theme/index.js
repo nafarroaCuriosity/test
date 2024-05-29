@@ -11,6 +11,10 @@ export const Colors = {
 
 const theme = createTheme({
 
+    components:{
+        
+    }
+
 })
 
 export default theme

@@ -4,10 +4,7 @@ import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import JSLogo from "../images/javascript.svg"
-import ReactLogo from "../images/react.svg"
-import GatsbyLogo from "../images/gatsby.svg"
-import NextLogo from "../images/next.svg"
+
 import { Box, Card, CardMedia, CssBaseline, Divider, Grid, Paper, ThemeProvider, Typography } from "@mui/material"
 import theme from "../styles/theme"
 
@@ -15,13 +12,13 @@ const Index = (props) => {
   useEffect(() => {
     document.title = 'Nafarroa Curiosity'
   }, [])
-  console.log(props.data.contentfulLastupdate.lastupdate);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Layout>
         <SEO title="Nafarroa Curiosity" description="Nafarroa Curiosityの公式サイトです" />
-        <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 20 }}>
+        <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 12 }}>
           <StaticImage
             src="../images/NafarroaCuriosity.png"
             alt="banner"
@@ -31,12 +28,9 @@ const Index = (props) => {
           />
         </Grid>
 
-        <Grid container maxWidth={'md'}
-          sx={{ mt: 8, mx: 'auto' }}
-        >
-
-          <Card elevation='none'
-            sx={{ maxWidth: 400, mx: 'auto', background: '#f0f0f0', p: 2 }}
+        <Grid container maxWidth={'md'} sx={{ mt: 8, mx: 'auto' }} >
+          <Card elevation={0}
+            sx={{ maxWidth: 400, mx: 'auto', mb: 8, background: '#f0f0f0', p: 2 }}
           >
             <CardMedia sx={{ display: 'flex', justifyContent: 'center', pb: 2 }}>
               <StaticImage
@@ -49,28 +43,25 @@ const Index = (props) => {
               />
             </CardMedia>
 
-            <Typography variant="h6" sx={{ml:10}}>
+            <Typography variant="h6" sx={{ textAlign: 'right' }}>
               {props.data.contentfulLastupdate.lastupdate}
             </Typography>
 
             <Divider />
 
             <Box sx={{ mt: 4 }}>
-              <Typography variant="h4">プロフィール</Typography>
+              <Typography variant="h5">プロフィール</Typography>
             </Box>
             <Box>
-              <Typography variant='h5'>
+              <Typography variant='h6'>
                 映像・音響機器の制御システム開発を行っています。<br />
                 制御専用のハードウェアやネイティブアプリケーションでの開発を行う一方で,
                 ハードウェアやOSに依存しないブラウザベースの制御システム開発にも取り組んでおり、
                 フロントエンジニアとしてチャレンジしています。
-
               </Typography>
             </Box>
           </Card>
         </Grid>
-
-
       </Layout>
     </ThemeProvider >
   )

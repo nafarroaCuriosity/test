@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as style from '../styles/singleBlog.module.scss'
+import { Grid, Typography } from "@mui/material"
 
 const SingleBlog = (props) => {
 
@@ -13,19 +14,25 @@ const SingleBlog = (props) => {
         title={props.data.contentfulBlog.title}
         description={props.data.contentfulBlog.excerpt}
       />
-      <div className={style.hero}>
-        <GatsbyImage
-          image={props.data.contentfulBlog.image.gatsbyImageData}
-          alt="blog-image"
+      <Grid container maxWidth={'lg'} sx={{ mx: 'auto', mt: 12 }}>
+        <Grid item sx={{ mx: 'auto' }}>
+          <GatsbyImage
+            image={props.data.contentfulBlog.image.gatsbyImageData}
+            alt="blog-image"
+          />
+        </Grid>
+      </Grid>
+      <Grid cotainer maxWidth={'md'} sx={{ mt: 8, mx: 'auto' }}>
+
+        <Typography variant="h3">{props.data.contentfulBlog.title}</Typography>
+        <Typography variant="h5">{props.data.contentfulBlog.date}</Typography>
+        <Typography variant="body1"
+          dangerouslySetInnerHTML={{
+            __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html
+          }}
         />
-      </div>
-      <div className={style.wrapper}>
-        <div className={style.cotainer}>
-          <h1>{props.data.contentfulBlog.title}</h1>
-          <p>{props.data.contentfulBlog.date}</p>
-          <div dangerouslySetInnerHTML={{ __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html }} />
-        </div>
-      </div>
+
+      </Grid>
     </Layout>
   )
 }

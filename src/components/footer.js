@@ -1,27 +1,34 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import github from '../images/github.svg'
-import linkedin from '../images/linkedin.svg'
-import twitter from '../images/twitter.svg'
-import facebook from '../images/facebook.svg'
-import * as style from '../styles/common.module.scss'
+import { Box, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { FooterList, FooterTitle } from '../styles/footer'
 
 const Footer = () => {
 
     return (
-        <footer className={style.footerWrapper}>
-            <div className={style.insideContainer}>
-                <a href='https://wwww.google.com'><img src={github} alt='logo' /></a>
-                <a href='https://wwww.google.com'><img src={linkedin} alt='logo' /></a>
-                <a href='https://wwww.google.com'><img src={twitter} alt='logo' /></a>
-                <a href='https://wwww.google.com'><img src={facebook} alt='logo' /></a>
+        <Container sx={{ background: '#e65100', minWidth:'100vw', heght: '100vh', p: 4, mt:12 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <FooterList>
+                    <Link to='/'>
+                        <ListItemIcon>
+                            <ListItemText primary='HOME' />
+                        </ListItemIcon>
+                    </Link>
 
-                <hr />
-                <Link to='/blog'>Blog</Link>
-                <Link to='/contact'>Contact</Link>
-                <p>{new Date().getFullYear()}Jack of All Trades</p>
-            </div>
-        </footer>
+                    <Link to='/blog'>
+                        <ListItemIcon>
+                            <ListItemText primary='blog' />
+                        </ListItemIcon>
+                    </Link>
+                </FooterList>
+            </Box>
+            
+
+            {/* <p>{new Date().getFullYear()}Nafarroa Curiosity</p> */}
+            <FooterTitle>Nafarroa Curiosity</FooterTitle>
+
+
+        </Container>
     )
 }
 
