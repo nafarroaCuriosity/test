@@ -27,10 +27,10 @@ const SingleBlog = (props) => {
           <Grid item sx={{ mx: 'auto' }}>
             <Typography variant="h3">{props.data.contentfulBlog.title}</Typography>
           </Grid>
-          <Grid item sx={{ mx: 'auto' }}>
-            <Typography variant="h5">{props.data.contentfulBlog.date}</Typography>
+          <Grid item>
+            <Typography variant="body2">{props.data.contentfulBlog.date}</Typography>
           </Grid>
-          <Grid item sx={{ justifyContent:'center' }}>
+          <Grid item sx={{ display:'flex',justifyContent:'center', mt:2 }}>
             <Typography variant="body1"
               dangerouslySetInnerHTML={{
                 __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html
