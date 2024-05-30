@@ -30,7 +30,7 @@ const SingleBlog = (props) => {
           <Grid item sx={{ mx: 'auto' }}>
             <Typography variant="h5">{props.data.contentfulBlog.date}</Typography>
           </Grid>
-          <Grid item sx={{ mx: 'auto' }}>
+          <Grid item sx={{ justifyContent:'center' }}>
             <Typography variant="body1"
               dangerouslySetInnerHTML={{
                 __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html
