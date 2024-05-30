@@ -1,6 +1,15 @@
 import { styled } from "@mui/material/styles";
-import { List, Typography } from "@mui/material";
+import { Box, List, Typography } from "@mui/material";
 import "@fontsource/quicksand"
+
+
+
+export const FooterContainer = styled(Box)(()=> ({
+    background: '#e65100',
+    marginTop: 12,
+    padding: 12,
+    height:'12vh',
+}))
 
 
 export const FooterList = styled(List)(()=> ({
@@ -16,4 +25,5 @@ export const FooterTitle = styled(Typography)(()=>({
     color:'#f0f0f0',
     fontSize:'2rem',
     fontFamily:'"quicksand", "sans-serif',
+
 }))

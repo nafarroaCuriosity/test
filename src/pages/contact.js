@@ -1,14 +1,13 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import * as styles from '../styles/contact.module.scss'
+import Seo from "../components/seo"
 
 const Contact = () => {
     return (
         <Layout>
-            <SEO title="コンタクト" description="これはコンタクページです" />
-            <div className={styles.wrapper}>
-                <div className={styles.container}>
+            <Seo title="コンタクト" description="これはコンタクページです" />
+            <div>
+                <div>
                     <h1>Contact</h1>
                     <p>お気軽にご連絡ください</p>
                     <form>

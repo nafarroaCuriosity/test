@@ -2,8 +2,7 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import * as style from '../styles/blog.module.scss'
+import Seo from "../components/seo"
 import { Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Typography } from "@mui/material"
 
 const Blog = (props) => {
@@ -12,7 +11,7 @@ const Blog = (props) => {
     <>
       <CssBaseline />
       <Layout>
-        <SEO title="Nafarroa Curiosity Blog" description="Nafarroa Curiosityのブログページです" />
+        <Seo title="Nafarroa Curiosity Blog" description="Nafarroa Curiosityのブログページです" />
 
         <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 12 }}>
           <StaticImage
