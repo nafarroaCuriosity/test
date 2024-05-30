@@ -26,16 +26,20 @@ const SingleBlog = (props) => {
         <Grid cotainer maxWidth={'md'} sx={{ mt: 8, mx: 'auto' }}>
           <Grid item sx={{ mx: 'auto' }}>
             <Typography variant="h3">{props.data.contentfulBlog.title}</Typography>
+          </Grid>
+          <Grid item sx={{ mx: 'auto' }}>
             <Typography variant="h5">{props.data.contentfulBlog.date}</Typography>
+          </Grid>
+          <Grid item sx={{ mx: 'auto' }}>
             <Typography variant="body1"
               dangerouslySetInnerHTML={{
                 __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html
               }}
-              sx={{textAlign:'center', overflow:'auto'}}
+              sx={{ overflowWrap: 'break-word' }}
             />
           </Grid>
         </Grid>
-      </Layout>
+      </Layout >
     </>
   )
 }
