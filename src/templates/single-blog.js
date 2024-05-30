@@ -31,7 +31,7 @@ const SingleBlog = (props) => {
               dangerouslySetInnerHTML={{
                 __html: props.data.contentfulBlog.textBody.childMarkdownRemark.html
               }}
-              sx={{mx:'auto', overflow:'auto'}}
+              sx={{textAlign:'center', overflow:'auto'}}
             />
           </Grid>
         </Grid>
