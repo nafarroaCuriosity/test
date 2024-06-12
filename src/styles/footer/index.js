@@ -8,7 +8,6 @@ export const FooterContainer = styled(Box)(()=> ({
     background: '#e65100',
     marginTop: 12,
     padding: 12,
-    // height:'12vh',
     height: 'auto'
 }))
 
