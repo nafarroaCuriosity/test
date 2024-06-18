@@ -4,14 +4,18 @@ import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-import { Box, Card, CardMedia, CssBaseline, Divider, Grid, Paper, ThemeProvider, Typography } from "@mui/material"
+import { useTheme } from "@mui/material/styles"
+import { Box, Card, CardMedia, CssBaseline, Divider, Grid, Paper, ThemeProvider, Typography, useMediaQuery } from "@mui/material"
 import theme from "../styles/theme"
 
 const Index = (props) => {
   useEffect(() => {
     document.title = 'Nafarroa Curiosity'
   }, [])
+
+
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('md'))  // md:900px
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,10 +54,10 @@ const Index = (props) => {
             <Divider />
 
             <Box sx={{ mt: 4 }}>
-              <Typography variant="h5">プロフィール</Typography>
+              <Typography variant={matches ? "h6" : "h5"}>プロフィール</Typography>
             </Box>
             <Box>
-              <Typography variant='h6'>
+              <Typography variant={matches ? 'body1' : 'h6'}>
                 映像・音響機器の制御システム開発を行っています。<br />
                 制御専用のハードウェアやネイティブアプリケーションでの開発を行う一方で,
                 ハードウェアやOSに依存しないブラウザベースの制御システム開発にも取り組んでおり、

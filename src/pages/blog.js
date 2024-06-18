@@ -3,9 +3,14 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Typography } from "@mui/material"
+import { useTheme } from "@mui/material/styles"
+import { Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Typography, useMediaQuery } from "@mui/material"
+import theme from "../styles/theme"
 
 const Blog = (props) => {
+
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down('md'))  // md:900px
 
   return (
     <>
@@ -13,7 +18,7 @@ const Blog = (props) => {
       <Layout>
         <Seo title="Nafarroa Curiosity Blog" description="Nafarroa Curiosityのブログページです" />
 
-        <Grid container maxWidth={"lg"} sx={{ mx: 'auto', mt: 12 }}>
+        <Grid container maxWidth={matches ? 'md' : "lg"} sx={{ mx: 'auto', mt: 12 }}>
           <StaticImage
             src="../images/Blog Banner.svg"
             alt="banner"
@@ -28,7 +33,7 @@ const Blog = (props) => {
         >
           <Grid item
             sx={{
-              display: 'grid',
+              display: matches ? 'block' : 'grid',
               gridTemplateColumns: '345px 345px 345px',
               gap: '41px',
               mx: 'auto'
